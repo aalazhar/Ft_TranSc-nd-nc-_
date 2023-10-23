@@ -22,7 +22,7 @@ export default function Sidebar() {
                           <Link className="text-[#E58E27] m-auto text-3xl xLarge:text-4xl" href={'/'}><IoSettingsOutline/></Link>
                     </div>
                 </div>
-                <div className="text-[#E58E27] text-lg xLarge:text-2xl items-center m-auto mb-8">LOG OUT</div>
+                <div className="text-[#E58E27] xLarge:text-2xl xLarge:items-center xLarge:m-auto xLarge:mb-8">LOG OUT</div>
         </div>
       )
 }
