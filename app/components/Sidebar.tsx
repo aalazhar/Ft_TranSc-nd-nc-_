@@ -19,7 +19,7 @@ export default function Sidebar() {
                           <Link className="text-[#E58E27] m-auto text-3xl xLarge:text-4xl" href={'/rank'}><GoTrophy/></Link>
                           <Link className="text-[#E58E27] m-auto text-3xl xLarge:text-4xl" href={'/chat'}><HiOutlineChatBubbleLeftEllipsis/></Link>
                           <Link className="text-[#E58E27] m-auto text-3xl xLarge:text-4xl" href={'/'}><GiAchievement/></Link>
-                          <Link className="text-[#E58E27] m-auto text-3xl xLarge:text-4xl" href={'/'}><IoSettingsOutline/></Link>
+                          <Link className="text-[#E58E27] m-auto text-3xl xLarge:text-4xl" href={'/setting'}><IoSettingsOutline/></Link>
                     </div>
                 </div>
                 <div className="text-[#E58E27] xLarge:text-2xl xLarge:items-center xLarge:m-auto xLarge:mb-8">LOG OUT</div>
