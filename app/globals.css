@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+#toogleCheck::after {
+    content: '';
+    @apply h-7 w-7 rounded-full absolute top-[2px] left-1 bg-red-500 opacity-100 transform transition duration-300;
+}
+#toogleCheck:checked::after {
+    @apply transform translate-x-7 transition duration-300 bg-emerald-500;
+}
