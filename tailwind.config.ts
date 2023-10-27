@@ -8,8 +8,10 @@ const config: Config = {
   ],
   theme: {
     screens: {
-        'xLarge': '2300px',
-        'Large' : '1280px',
+        'xLarge': '2170px',
+        'Large' : '1500px',
+        'xMedium': '1130px',
+        'medium': '580px'
         
     },
     extend: {

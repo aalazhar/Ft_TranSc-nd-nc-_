@@ -9,7 +9,7 @@ function MatchHist() {
         <div>
           <MCard/>
         </div>
-          <div className='text-center m-auto text-2xl'>vs</div>
+          <div className='text-center m-auto text-xl medium:text-2xl'>vs</div>
         <div>
           <CardM/>
         </div>

@@ -34,32 +34,32 @@ export default function Pra() {
 
 
 
-    <div className="flex flex-col h-full min-h-screen min-w-screen">
+    <div className="flex flex-col medium:h-full min-h-screen min-w-screen">
       <div className="h-16 xLarge:h-24"><Navbar pageName="Profile" /></div>
-      <div className="flex gap-12 min-h-[1200px] xLarge:h-[1200px] min-w-[1000px] m-4 ">
-        <div className="w-[45%] h-[100%] flex flex-col gap-6">
-          <div className="flex w-full h-[30%] rounded-lg mb-2 mx-auto">
-            <div className="min-w-[30%] w-72 h-full ">
+      <div className="flex bg-green-300 flex-col medium:flex-row medium:gap-12 medium:min-h-[1200px] w-[400px] medium:w-full xLarge:h-[1200px] medium:min-w-[1000px] medium:m-4 ">
+        <div className="w-[100%] bg-purple-400 medium:w-[45%] h-[100%] flex flex-col medium:gap-6">
+          <div className="flex flex-col medium:flex-row w-[100%] bg-orange-300  medium:w-full h-[100%] medium:h-[40%] rounded-lg medium:mb-2 mx-auto">
+            <div className="min-w-[30%] w-72 h-full bg-pink-200 ">
               <div className="grid h-full w-full content-center ">
-                <Image className='rounded-full border-4 mx-auto border-[#E58E27]' alt='' src={'/gsus.jpeg'} height={250} width={250}/>
+                <Image className='rounded-full border-4 mx-auto w-40 h-40 medium:w-40 medium:h-40 Large:w-56 Large:h-56 border-[#E58E27]' alt='' src={'/gsus.jpeg'} height={150} width={150}/>
 
                 {/* <Image className='shadow-neon-light' layout="fill" objectFit="contain" src={'/gsus.jpeg'} alt="PING PONG" /> */}
               </div>
             </div>
-            <div className="flex flex-col justify-between text-[9px] md:text-[16px] w-[90%] rounded-2xl min-w-[300px] h-full">
-              <div className="flex xLarge:text-2xl justify-between w-full p-5 mx-auto bg-[#30313E] rounded-2xl">
+            <div className="flex flex-col my-auto h-[70%] medium:h-[60%] justify-between text-[14px] w-[90%] medium:rounded-xl rounded-2xl min-w-[300px] Large:h-full xLarge:h-full xMedium:h-[80%] xMedium:text-[16px]">
+              <div className="flex xLarge:text-2xl Large:text-xl Large:p-6 justify-between w-full xMedium:p-5 p-3 mx-auto bg-[#30313E] rounded-2xl">
                 <div>Name :</div>
                 <div>{user.name}</div>
               </div>
-              <div className="flex xLarge:text-2xl justify-between w-full p-5 mx-auto bg-[#30313E] rounded-2xl">
+              <div className="flex xLarge:text-2xl Large:text-xl Large:p-6 justify-between w-full xMedium:p-5 p-3 mx-auto bg-[#30313E] rounded-2xl">
                 <div>User Name :</div>
                 <div>{user.userName}</div>
               </div>
-              <div className="flex xLarge:text-2xl justify-between w-full p-5 mx-auto bg-[#30313E] rounded-2xl">
+              <div className="flex xLarge:text-2xl Large:text-xl Large:p-6 justify-between w-full xMedium:p-5 p-3 mx-auto bg-[#30313E] rounded-2xl">
                 <div>Rank :</div>
                 <div>{user.rank}</div>
               </div>
-              <div className="flex xLarge:text-2xl justify-between w-full p-5 mx-auto bg-[#30313E] rounded-2xl">
+              <div className="flex xLarge:text-2xl Large:text-xl Large:p-6 justify-between w-full xMedium:p-5 p-3 mx-auto bg-[#30313E] rounded-2xl">
                 <div>Level :</div>
                 <div>{user.level}</div>
               </div>
@@ -79,9 +79,9 @@ export default function Pra() {
           </div>
           <Achievements noBadge={user.pathImg}/>
         </div>
-        <div className="h-[100%] min-w-[50%] bg-[#30313E] rounded-2xl">
-          <h1 className="m-auto xLarge:text-3xl h-[10%] text-center pt-9 text-[#E58E27]">LAST MATCH HISTORY</h1>
-          <div className="flex flex-col h-[90%] w-[100%] text-[#E58E27] px-3 min-w-xs">
+        <div className="h-[100%] w-full medium:w-[38%] medium:min-w-[50%] bg-[#30313E] flex flex-col items-center  rounded-2xl">
+          <h1 className=" xLarge:text-3xl medium:pt-9 text-[#E58E27] p-5">LAST MATCH HISTORY</h1>
+          <div className="flex flex-col h-[100%] medium:h-[90%] w-[100%] medium:w-[100%] text-[#E58E27] m-auto">
             <MatchHist/>
             <MatchHist/>
             <MatchHist/>
