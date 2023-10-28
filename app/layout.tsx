@@ -28,7 +28,7 @@ export default function RootLayout({
         <main className='flex min-w-fit h-full text-white justify-start bg-[#1E1A1E] ' >
           <MyProvider>
             <div className='w-20 xLarge:w-32'><Sidebar /></div>
-            <div className='w-full'>
+            <div className='w-full medium:h-screen xMedium:h-full'>
             {children}
             </div>
           </MyProvider>

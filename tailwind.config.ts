@@ -10,8 +10,8 @@ const config: Config = {
     screens: {
         'xLarge': '2170px',
         'Large' : '1500px',
-        'xMedium': '1130px',
-        'medium': '580px'
+        'xMedium': '1179px',
+        'medium': '570px'
         
     },
     extend: {
