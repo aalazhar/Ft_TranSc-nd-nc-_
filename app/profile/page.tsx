@@ -1,20 +1,36 @@
 'use client'
 import Navbar from "../components/Navbar"
 import Image from "next/image"
-import Sidebar from "../components/Sidebar"
 import { useState, useEffect } from "react"
-import UserProvider, { User, userContext } from "../Contexts/userContext"
-import Test from "../ssss/Test"
 import { useDispatch, useSelector } from 'react-redux';
-import { UserActions } from "../store/userStore"
 import Achievements from "../components/Achievements"
 import MatchHist from "../components/MatchHist"
+import { fetchInfos } from "../Slices/userSlice"
+import { AsyncThunk } from "@reduxjs/toolkit"
+import { AppDispatch, RootState } from "../store/store";
 
 export default function Pra() {
 
-  const user = useSelector((state: any) => state.user2)
+  const {entity} = useSelector((state: RootState) => state.user);
 
-  const disp = useDispatch()
+  console.log("================");
+  console.log(entity);
+  console.log("================");
+  // const status = useSelector((state: any) => state.user.status);
+  // const error = useSelector((state: any) => state.user.error);
+  let status = 'none';
+  // console.log("tessssssst");
+  // console.log(user.name);
+  
+
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    if (status === 'none'){
+      dispatch(fetchInfos());
+    }
+
+  }, [])
 
   // localStorage.setItem('user', JSON.stringify({ name: 'anas jaidi', userName: ' mqwed khou anas', rank: 1000000000, level: 100000 }))
   // const [data, setData] = useState(null)
@@ -49,19 +65,19 @@ export default function Pra() {
             <div className="flex flex-col my-auto h-48 medium:h-[60%] w-[70%] justify-between text-[14px] xMedium:w-[90%] medium:rounded-xl rounded-2xl min-w-[320px] Large:h-[90%] xLarge:h-[95%] xMedium:h-[70%] xMedium:text-[16px]">
               <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#30313E] rounded-2xl">
                 <div>Name :</div>
-                <div>{user.name}</div>
+                <div>{entity.name}</div>
               </div>
               <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#30313E] rounded-2xl">
                 <div>User Name :</div>
-                <div>{user.userName}</div>
+                <div>{entity.username}</div>
               </div>
               <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#30313E] rounded-2xl">
                 <div>Rank :</div>
-                <div>{user.rank}</div>
+                <div>19</div>
               </div>
               <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#30313E] rounded-2xl">
                 <div>Level :</div>
-                <div>{user.level}</div>
+                <div>{entity.phone}</div>
               </div>
               {/* <div className="flex flex-col justify-between h-[65%] text-lg xLarge:text-2xl m-auto text-slate-500">
                 <div className="md:py-2">Name : </div>
@@ -77,7 +93,8 @@ export default function Pra() {
               </div> */}
             </div>
           </div>
-          <Achievements noBadge={user.pathImg}/>
+          {/* <Achievements noBadge={"user.pathImg"}/> */}
+          <Achievements noBadge="/noBadge.png"/>
         </div>
         <div className="h-[60%] medium:h-[90%] Large:h-full w-full medium:w-[38%] medium:min-w-[50%] bg-[#30313E] flex flex-col items-center m-auto rounded-2xl">
           <h1 className=" xLarge:text-3xl medium:pt-9 text-[#E58E27] p-5">LAST MATCH HISTORY</h1>

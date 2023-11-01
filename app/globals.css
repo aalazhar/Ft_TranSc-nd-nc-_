@@ -10,3 +10,28 @@
 #toogleCheck:checked::after {
     @apply transform translate-x-7 transition duration-300 bg-emerald-500;
 }
+
+
+body {
+    --sb-track-color: #232e33;
+    --sb-thumb-color: #e58e27;
+    --sb-size: 10px;
+  
+    scrollbar-color: var(--sb-thumb-color) 
+                     var(--sb-track-color);
+  }
+  
+  body::-webkit-scrollbar {
+    width: var(--sb-size) 
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: var(--sb-track-color);
+
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: var(--sb-thumb-color);
+    border-radius: 10px;
+    
+    }
