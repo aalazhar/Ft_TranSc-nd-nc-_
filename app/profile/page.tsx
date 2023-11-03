@@ -14,7 +14,8 @@ export default function Pra() {
   const {entity} = useSelector((state: RootState) => state.user);
 
   console.log("================");
-  console.log(entity);
+  console.log(entity.userData);
+  
   console.log("================");
   // const status = useSelector((state: any) => state.user.status);
   // const error = useSelector((state: any) => state.user.error);
@@ -65,11 +66,11 @@ export default function Pra() {
             <div className="flex flex-col my-auto h-48 medium:h-[60%] w-[70%] justify-between text-[14px] xMedium:w-[90%] medium:rounded-xl rounded-2xl min-w-[320px] Large:h-[90%] xLarge:h-[95%] xMedium:h-[70%] xMedium:text-[16px]">
               <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#30313E] rounded-2xl">
                 <div>Name :</div>
-                <div>{entity.name}</div>
+                <div>{entity?.userData?.lastName} {entity?.userData?.firstName}</div>
               </div>
               <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#30313E] rounded-2xl">
                 <div>User Name :</div>
-                <div>{entity.username}</div>
+                <div>{entity?.userData?.login}</div>
               </div>
               <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#30313E] rounded-2xl">
                 <div>Rank :</div>
@@ -77,7 +78,7 @@ export default function Pra() {
               </div>
               <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#30313E] rounded-2xl">
                 <div>Level :</div>
-                <div>{entity.phone}</div>
+                <div>{entity?.userData?.id}</div>
               </div>
               {/* <div className="flex flex-col justify-between h-[65%] text-lg xLarge:text-2xl m-auto text-slate-500">
                 <div className="md:py-2">Name : </div>
