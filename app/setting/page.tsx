@@ -17,19 +17,19 @@ export default function setting() {
                   </label>
                   <input type="file" id="file-input" className="hidden"/>
                 </div>
-                <div className="flex justify-between h-24 w-[50%] mx-auto  min-w-[500px] rounded-3xl bg-[#30313E]">
+                <div className="flex justify-between h-24 w-[50%] mx-auto  min-w-[500px] rounded-3xl bg-[#323232]">
                     <div className="text-[#E58E27] text-2xl m-auto">Username</div>
                     <div className="text-slate-400 text-2xl m-auto w-[160px]">iel-sma</div>
                 </div>
-                <div className="flex justify-between h-24 w-[50%] mx-auto  min-w-[500px] rounded-3xl bg-[#30313E]">
+                <div className="flex justify-between h-24 w-[50%] mx-auto  min-w-[500px] rounded-3xl bg-[#323232]">
                     <div className="text-[#E58E27] text-2xl m-auto">Nick name</div>
-                    <div className="m-auto bg-[#30313E]">
-                      <input type="text" placeholder="MyUserName" className="border-none bg-none placeholder-slate-400 bg-[#30313E] outline-0 w-[160px] text-2xl" />
+                    <div className="m-auto bg-[#323232]">
+                      <input type="text" placeholder="MyUserName" className="border-none bg-none placeholder-slate-400 bg-[#323232] outline-0 w-[160px] text-2xl" />
                     </div>
                 </div>
-                <div className="flex justify-between h-24 w-[50%] mx-auto  min-w-[500px] rounded-3xl bg-[#30313E]">
+                <div className="flex justify-between h-24 w-[50%] mx-auto  min-w-[500px] rounded-3xl bg-[#323232]">
                     <div className="text-[#E58E27] text-2xl m-auto">Enable 2FA</div>
-                    <div className="m-auto w-[160px] bg-[#30313E]">
+                    <div className="m-auto w-[160px] bg-[#323232]">
                       <label htmlFor="toggleCheck" className="w-[180px] h-20">
                         <input type="checkbox" id="toogleCheck" className="h-8 rounded-full appearance-none w-16 bg-slate-500 opacity-80 checked:bg-slate-200 transition duration-300 relative" />
                         {/* <span className="w-5 h-5 bg-red-400 rounded-full absolute top-1 left-1"></span>
@@ -37,7 +37,7 @@ export default function setting() {
                       </label>
                     </div>
                 </div>
-                <div className="h-24 w-[50%] mx-auto  min-w-[500px] rounded-3xl bg-[#30313E]"></div>
+                <div className="h-24 w-[50%] mx-auto  min-w-[500px] rounded-3xl bg-[#323232]"></div>
 
               </div>
               <div className=" m-auto min-w-[600px]">

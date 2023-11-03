@@ -14,7 +14,7 @@ export default function Pra() {
   const {entity} = useSelector((state: RootState) => state.user);
 
   console.log("================");
-  console.log(entity.userData);
+  console.log(entity?.userData?.avatar);
   
   console.log("================");
   // const status = useSelector((state: any) => state.user.status);
@@ -58,25 +58,25 @@ export default function Pra() {
           <div className="flex flex-col xMedium:flex-row w-[100%] items-center xMedium:w-full h-[40%] medium:h-[40%] xMedium:h-[32%] xLarge:h-[45%] Large:h-[38%] rounded-lg medium:mb-2 mx-auto">
             <div className="min-w-[30%] w-72 h-[70%]">
               <div className="grid h-full w-full content-center ">
-                <Image className='rounded-full border-4 mx-auto w-40 h-40 xMedium:w-36 xMedium:h-36 Large:w-56 Large:h-56 border-[#E58E27]' alt='' src={'/gsus.jpeg'} height={150} width={150}/>
+                <Image className='rounded-full border-4 mx-auto w-40 h-40 xMedium:w-36 xMedium:h-36 Large:w-56 Large:h-56 border-[#E58E27]' alt='' src={entity?.userData?.avatar} height={150} width={150}/>
 
                 {/* <Image className='shadow-neon-light' layout="fill" objectFit="contain" src={'/gsus.jpeg'} alt="PING PONG" /> */}
               </div>
             </div>
             <div className="flex flex-col my-auto h-48 medium:h-[60%] w-[70%] justify-between text-[14px] xMedium:w-[90%] medium:rounded-xl rounded-2xl min-w-[320px] Large:h-[90%] xLarge:h-[95%] xMedium:h-[70%] xMedium:text-[16px]">
-              <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#30313E] rounded-2xl">
+              <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#323232] rounded-2xl">
                 <div>Name :</div>
                 <div>{entity?.userData?.lastName} {entity?.userData?.firstName}</div>
               </div>
-              <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#30313E] rounded-2xl">
+              <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#323232] rounded-2xl">
                 <div>User Name :</div>
                 <div>{entity?.userData?.login}</div>
               </div>
-              <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#30313E] rounded-2xl">
+              <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#323232] rounded-2xl">
                 <div>Rank :</div>
                 <div>19</div>
               </div>
-              <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#30313E] rounded-2xl">
+              <div className="flex xLarge:text-2xl Large:text-xl Large:p-5 xLarge:p-6 justify-between w-full xMedium:p-4 p-3 mx-auto bg-[#323232] rounded-2xl">
                 <div>Level :</div>
                 <div>{entity?.userData?.id}</div>
               </div>
@@ -97,7 +97,7 @@ export default function Pra() {
           {/* <Achievements noBadge={"user.pathImg"}/> */}
           <Achievements noBadge="/noBadge.png"/>
         </div>
-        <div className="h-[60%] medium:h-[90%] Large:h-full w-full medium:w-[38%] medium:min-w-[50%] bg-[#30313E] flex flex-col items-center m-auto rounded-2xl">
+        <div className="h-[60%] medium:h-[90%] Large:h-full w-full medium:w-[38%] medium:min-w-[50%] bg-[#323232] flex flex-col items-center m-auto rounded-2xl">
           <h1 className=" xLarge:text-3xl medium:pt-9 text-[#E58E27] p-5">LAST MATCH HISTORY</h1>
           <div className="flex flex-col h-[100%] medium:h-[90%] w-[100%] medium:w-[100%] text-[#E58E27] m-auto">
             <MatchHist/>
