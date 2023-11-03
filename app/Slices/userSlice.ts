@@ -34,7 +34,7 @@ const initialState = {
 } as any;
 
 export const fetchInfos = createAsyncThunk("user/fetch", async (thunkApi) => {
-  const response = await fetch ("https://jsonplaceholder.typicode.com/users/3", {
+  const response = await fetch ("http://10.11.3.8:5000/Profile/98861", {
     method: "GET"
   });
   const data = await response.json();   
