@@ -1,12 +1,33 @@
 import { createAsyncThunk ,createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { RootState } from '../store/store';
 import { log } from 'console'
 
-// interface UserInfos {
-//   name: string;
-//   userName: string;
-//   rank: number;
-//   level: number;
-//   pathImg: string;
+export interface UserInfos {
+  id: number;
+  name: string;
+  userName: string;
+  rank: number;
+  level: number;
+  avatar: string;
+}
+
+export interface userState {
+  user_Data:UserInfos;
+  loading: boolean;
+  error: string | null;
+}
+
+// export const initialState: userState = {
+//   user_Data: {
+//     id: 0,
+//     name: '',
+//     userName: '',
+//     rank: 0,
+//     level: 0,
+//     avatar: '',
+//   },
+//   loading: false,
+//   error: null,
 // }
 // const UserInfo:UserInfos = {
 //   name: 'hassaaaaaaan',
@@ -38,8 +59,6 @@ export const fetchInfos = createAsyncThunk("user/fetch", async (thunkApi) => {
     method: "GET"
   });
   const data = await response.json();   
- 
-  // console.log(data);
   return (data);
 })
 
@@ -52,17 +71,15 @@ const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchInfos.pending, (state) => {
-        // state.status = 'loading';
+        state.loading = true;
       })
       .addCase(fetchInfos.fulfilled, (state, action) => {
-        // state.status = 'succeeded';
-        // state.userInfo = action.payload;
-        state.entity = action.payload;
-        // state.entity.push(action.payload);
+        state.user_Data = action.payload;
+        state.loading = false;
       })
       .addCase(fetchInfos.rejected, (state, action) => {
-        // state.status = 'failed';
-        // state.error = action.error.message;
+        state.loading = false;
+        state.error = action.error.message || 'Something went wrong !';
       });
   },
 });
@@ -70,4 +87,7 @@ const userSlice = createSlice({
 
 // export const { addInfos } = userSlice.actions;
 export default userSlice.reducer;
+// export const selectUser = (state: RootState) => state.user.user_Data
+// export const selectLoading = (state: RootState) => state.user.loading
+// export const selectError = (state: RootState) => state.user.error
 
