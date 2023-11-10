@@ -16,7 +16,7 @@ export default function Pra() {
   const dataUser = useSelector((state: RootState) => state.user.user_Data?.userData);
 
   console.log("================");
-  console.log(Achievs);
+  console.log(matchHIst);
 
   
   console.log("================");
@@ -102,12 +102,12 @@ export default function Pra() {
         </div>
         <div className="h-[60%] medium:h-[90%] Large:h-full w-full medium:w-[38%] medium:min-w-[50%] bg-[#323232] flex flex-col items-center m-auto rounded-2xl">
           <h1 className=" xLarge:text-3xl medium:pt-9 text-[#E58E27] p-5">LAST MATCH HISTORY</h1>
-          <div className="flex flex-col h-[100%] medium:h-[90%] w-[100%] medium:w-[100%] text-[#E58E27] m-auto">
-            <MatchHist/>
-            <MatchHist/>
-            <MatchHist/>
-            <MatchHist/>
-            <MatchHist/>
+          <div className="overflow-y-scroll flex flex-col h-[100%] medium:h-[90%] w-[100%] medium:w-[100%] text-[#E58E27] m-auto scrollbar-hide">
+          {matchHIst?.map((_: any, index: number) => (
+    <div key={index} className="p-5">
+      <MatchHist index={index} />
+    </div>
+  ))}
           </div>
         </div>
       </div>
