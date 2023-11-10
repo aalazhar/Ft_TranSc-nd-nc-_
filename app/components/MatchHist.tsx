@@ -56,17 +56,39 @@ import { RootState } from '../store/store'
 //   error: null,
 // }
 
-function MatchHist() {
+interface MatchHIst {
+  id: number;
+  playerAId:number;
+  playerBId:number;
+  playerAAvatar:string;
+  playerBAvatar:string;
+  playerAUsername:string;
+  playerBUsername:string;
+  playerBScore:number;
+  playerAScore:number;
+}
 
-  const {user_Data} = useSelector((state: RootState) => state.user);
+type Props = {
+    index:number;
+  };
+
+
+
+function MatchHist({index}:Props) {
+
+// function MatchHist() {
+
+  // const {user_Data} = useSelector((state: RootState) => state.user);
+  
+
   return (
     <div className='flex min-w-[300px] w-[85%] h-32 justify-between m-auto'>
         <div>
-          <MCard/>
+          <MCard index={index}/>
         </div>
           <div className='text-center m-auto text-xl medium:text-2xl'>vs</div>
         <div>
-          <CardM/>
+          <CardM index={index}/>
         </div>
     </div>
   )
