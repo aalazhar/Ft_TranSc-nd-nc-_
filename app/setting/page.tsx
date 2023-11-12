@@ -3,16 +3,40 @@ import axios from "axios";
 import Navbar from "../components/Navbar"
 import Image from "next/image"
 import { FiEdit2 } from "react-icons/fi";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useCookies } from 'react-cookie';
+import { Console } from "console";
 
 export default function setting() {
 
+
+  const [cookies, setCookie] = useCookies(['jwt-token']);
+  const [jwtToken, setJwtToken] = useState<string | undefined>(cookies["jwt-token"]);
+  console.log('++++++++++');
+  console.log({cookies});
+  console.log('++++++++++');
   const [imageD, setImageD] = useState<File | null>(null);
   const [formData, setFormData] = useState({
     username: '',
     email: '',
     checked_: false,
   });
+
+  useEffect(() => {
+    const jwtValue = cookies["jwt-token"];
+
+    console.log('jwt-token:', jwtValue);
+    setJwtToken(jwtValue);
+    console.log(jwtToken);
+  }, [cookies]);
+
+  const headers = {
+    Authorization: `Bearer ${jwtToken}`,
+  };
+
+  console.log(headers);
+
+  // const jwt = cookieStore.get('jwt');
 
   // const uploadImage = () => {
   // if (imageD instanceof File){  
@@ -49,16 +73,16 @@ export default function setting() {
       formData.append('upload_preset', 'vzhhlhkm');
 
       try {
+        console.log(formData);
+
         const response = await axios.post(
           'https://api.cloudinary.com/v1_1/dlnhacgo2/image/upload',
           formData
         );
 
         if (response.status === 200) {
-          // Handle success
           console.log('Image uploaded successfully:', response.data);
         } else {
-          // Handle errors
           console.error('Image upload failed:', response.data);
         }
       } catch (error) {
@@ -69,14 +93,12 @@ export default function setting() {
 
   const handleFormDataSubmit = async () => {
     try {
-      console.log(formData);
-      const response = await axios.post('/api/your-endpoint', formData);
+      const response = await axios.post('http://10.11.3.8:5000/Settings/username', formData, { headers });
+      console.log(response);
 
       if (response.status === 200) {
-        // Handle success
         console.log('Data submitted successfully:', response.data);
       } else {
-        // Handle errors
         console.error('Data submission failed:', response.data);
       }
     } catch (error) {
@@ -87,10 +109,8 @@ export default function setting() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Upload image to Cloudinary
     await handleImageUpload();
 
-    // Send username and email to the server
     await handleFormDataSubmit();
   }
 
